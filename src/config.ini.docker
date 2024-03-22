@@ -11,13 +11,15 @@ debug={{DEBUG}}
 
 [DEVICE]
 FanOutAbsent=15
-FanOutLow=25
+#FanOutLow=25
+FanOutLow=30
 FanOutMid=50
 # FanOutMid=50
 FanOutHigh=85 
 # FanOutHigh=70
 FanInAbsent=15 
-FanInLow=25
+#FanInLow=25
+FanInLow=30
 FanInMid=50
 # FanInMid=40
 FanInHigh=85

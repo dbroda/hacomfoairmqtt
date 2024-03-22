@@ -17,9 +17,9 @@ FanOutHigh=80 #70
 FanInAbsent=15 
 FanInLow=25
 FanInMid=45
-#40
+# FanInMid=40
 FanInHigh=80
-#70
+# FanInHigh=70
 SetUpFanLevelsAtStart=True
 
 [MQTT]

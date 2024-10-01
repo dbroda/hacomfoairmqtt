@@ -1,9 +1,9 @@
-services:    
+services:
   hassioaddon-comfoair350:
-    image: darek/comfoair350:latest
+    build: .
     container_name: comfoair350
     devices:
-      - /dev/serial/by-id/usb-FTDI_FT232R_USB_UART_A50285BI-if00-port0
-    restart: always
+      - "/dev/serial/by-id/usb-FTDI_FT232R_USB_UART_A50285BI-if00-port0"
     env_file:
       - stack.env
+    restart: always

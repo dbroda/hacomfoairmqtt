@@ -504,20 +504,20 @@ def set_fan_levels(Intake=True, Exhaust=True):
         InMid = bytes([FanInMid])
         InHigh = bytes([FanInHigh])
     else:
-        InAbsent = bytes([0])
-        InLow = bytes([0])
-        InMid = bytes([0])
-        InHigh = bytes([0])
+        InAbsent = bytes([FanInAbsent])
+        InLow = bytes([FanInAbsent])
+        InMid = bytes([FanInAbsent])
+        InHigh = bytes([FanInAbsent])
     if Exhaust:
         OutAbsent = bytes([FanOutAbsent])
         OutLow = bytes([FanOutLow])
         OutMid = bytes([FanOutMid])
         OutHigh = bytes([FanOutHigh])
     else:
-        OutAbsent = bytes([0])
-        OutLow = bytes([0])
-        OutMid = bytes([0])
-        OutHigh = bytes([0])
+        OutAbsent = bytes([FanOutAbsent])
+        OutLow = bytes([FanOutAbsent])
+        OutMid = bytes([FanOutAbsent])
+        OutHigh = bytes([FanOutAbsent])
     
     debug_msg('Fan levels config: FanOutAbsent: {0} %, FanOutLow: {1} %, FanOutMid: {2} %, FanInAbsent: {3} %'.format(FanOutAbsent, FanOutLow, FanOutMid, FanInAbsent))
     
@@ -570,11 +570,11 @@ def get_ventilation_status():
 
             debug_msg('ReturnAirLevel: {}, SupplyAirLevel: {}, FanLevel: {}, IntakeFanActive: {}'.format(ReturnAirLevel, SupplyAirLevel, FanLevel, StrIntakeFanActive))
 
-            if OutLow == 0 and InLow == 0:
+            if OutLow == FanOutAbsent and InLow == FanInAbsent:
                 publish_message(msg='off', mqtt_path='comfoair/fancontrol')
-            elif OutLow > 0 and InLow == 0:
+            elif OutLow > FanOutAbsent and InLow == FanInAbsent:
                 publish_message(msg='Out', mqtt_path='comfoair/fancontrol')
-            elif OutLow == 0 and InLow > 0:
+            elif OutLow == FanOutAbsent and InLow > FanInAbsent:
                 publish_message(msg='In', mqtt_path='comfoair/fancontrol')
             else:
                 publish_message(msg='Both', mqtt_path='comfoair/fancontrol')

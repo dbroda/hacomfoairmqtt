@@ -12,19 +12,21 @@ debug={{DEBUG}}
 [DEVICE]
 FanOutAbsent=10
 FanOutLow=25
-#FanOutLow=30
 FanOutMid=40
-# FanOutMid=50
-# FanOutHigh=85 
 FanOutHigh=70
 FanInAbsent=10
 FanInLow=25
-#FanInLow=30
-#FanInMid=50
 FanInMid=40
-#FanInHigh=85
 FanInHigh=70
 SetUpFanLevelsAtStart=True
+
+#FanOutAbsent=15
+#FanOutLow=30
+#FanOutMid=50
+#FanOutHigh=85 
+#FanInLow=30
+#FanInMid=50
+#FanInHigh=85
 
 [MQTT]
 # MQTT broker - IP
